@@ -32,8 +32,9 @@ const puppeteer = require('puppeteer');
 // }
 
 const JumiaScrapper = ()=>{
-    const url = 'https://www.jumia.co.ke/groceries';
+    const primaryUrl = 'https://www.jumia.co.ke/';
     let searchItems;
+    let rawData;
 
     function isCorrectArgument(input){
        
@@ -58,7 +59,22 @@ const JumiaScrapper = ()=>{
     async function launchScrapper(){
         const browser = await puppeteer.launch({headless:false})
         const page = await browser.newPage();
-        await page.goto(url,{waitUntil: 'load', timeout: 0})
+        
+        await page.goto('https://www.jumia.co.ke/sugar-flour',{waitUntil: 'load', timeout: 0})
+
+        rawData = await page.evaluate(()=>{
+            const data = []
+            const items = document.querySelectorAll('.prd')
+
+            for (const item of items){
+                data.push({
+                    name: item.querySelector('.name').innerHTML,
+                    price: item.querySelector('.prc').innerHTML
+                })
+            }
+            return data
+        })  
+
 
         await browser.close()
     }
