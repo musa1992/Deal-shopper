@@ -1,6 +1,3 @@
-// jest.setTimeout(10000);
-const jumiaScrapper = require('../models/scrappers/jumiaScrapper.model')
-
 describe('Test for browser operations', ()=>{
     beforeAll( async ()=> {
         await page.setViewport({
@@ -16,8 +13,6 @@ describe('Test for browser operations', ()=>{
 
     });
 
-    
-
     it('page url should be "https://www.jumia.co.ke/groceries" ', async ()=> {
         await expect(page.url()).toMatch('https://www.jumia.co.ke/groceries');
     })
@@ -30,8 +25,4 @@ describe('Test for browser operations', ()=>{
     //     await expect(page.url()).toMatch(linkArray[0])
     // }) 
     
-})
-
-describe('Test for scrapper model', ()=>{
-
 })

@@ -38,8 +38,8 @@ const JumiaScrapper = ()=>{
     return {}
 }
 
-
+const jumiaScrapper = JumiaScrapper()
 
 module.exports = {
-    JumiaScrapper
+    jumiaScrapper
 }
