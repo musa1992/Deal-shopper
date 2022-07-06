@@ -33,9 +33,37 @@ const puppeteer = require('puppeteer');
 
 const JumiaScrapper = ()=>{
     const url = 'https://www.jumia.co.ke/groceries';
+    let searchItems;
 
+    function isCorrectArgument(input){
+       
+        return input.every(element => element.category && element.name && element.quantity ) 
+
+    }
+
+    function setSearchItems(shoppingItems){
+        if(isCorrectArgument(shoppingItems)){
+            searchItems = shoppingItems
+        }else{
+            //create error object
+            throw 'Item in the list is not categorized'
+        }
+    }
+
+    function getSearchItems(){
+        return searchItems
+    }
+
+
+    async function launchScrapper(){
+        const browser = await puppeteer.launch({headless:false})
+        const page = await browser.newPage();
+        await page.goto(url,{waitUntil: 'load', timeout: 0})
+
+        await browser.close()
+    }
     
-    return {}
+    return {setSearchItems, launchScrapper}
 }
 
 const jumiaScrapper = JumiaScrapper()
