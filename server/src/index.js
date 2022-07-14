@@ -1,6 +1,28 @@
-const { JumiaScrapper } = require('./models/scrappers/jumiaScrapper.model')
+const { jumiaScrapper } = require('./models/scrappers/jumiaScrapper.model')
+const { copiaScrapper } = require('./models/scrappers/copiaScrapper.model')
 
-const jumiaScrapper = JumiaScrapper()
+
+
+const scrapper = copiaScrapper()
+
+scrapper.products().then((value)=>{
+    console.log(value)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

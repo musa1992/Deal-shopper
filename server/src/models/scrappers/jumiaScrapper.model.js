@@ -1,45 +1,73 @@
-const puppeteer = require('puppeteer');
+const { scrapper }= require('./scrapper')
 
-
-
-// async function loadPage(page, url){
-//     await page.goto(url,{waitUntil: 'load', timeout: 0})   
-// }
-
-// async function getElements(page){
-   
-//     const element = await page.waitForSelector('.flyout', {timeout: 0})  
-
-//     const categoriesLinkArray = await element.$$eval('.itm', nodes => nodes.map(node => node.href))
+const jumiaScrapper = ()=>{
+    const url = 'https://www.jumia.co.ke/food-cupboard-supplies/'
+    const { scrapData } = scrapper()
     
-//     console.log(categoriesLinkArray)
-    
-//     return categoriesLinkArray
+    function getProductCategoryLinks (){
+        let links = [];
+        let categoryContainer;
+        const titles = document.querySelectorAll('.ttl');
 
-// }
+        for (const title of titles) {
+            if(title.innerHTML === 'Shop by Category'){
+                categoryContainer = title.nextSibling
+            }
+        }
+        const categories = categoryContainer.querySelectorAll('.col')
+        for (const category of categories){
+            let regex = /beer-wine-spirits/  //exclude beer category
+            let regex2 = /mlp-cat-groceries/
+            if(!regex.test(category.href) || !regex2.test(category.href)){
+                links.push(category.href)
+            }    
+        }
 
-// async function run (){
-//     const url = 'https://www.jumia.co.ke'
-//     const browser = await puppeteer.launch({headless: false})
-//     const page = await browser.newPage();
-//     await loadPage(page,url)
+        return links
+    }
 
-//     const categoryLinks = await getElements(page)
+    async function productCategories(){
+        const links = await scrapData(url,getProductCategoryLinks)
+        return links
+    }
 
-//     await page.goto(categoryLinks[0])
+    function getProducts(){
+        let products = []
+        const productContainer = document.querySelectorAll('.info')
 
-//     await browser.close()
-// }
+        for (const product of productContainer) {
+            let name = product.querySelector('.name').innerHTML
+            let price = product.querySelector('.prc').innerHTML
+            products.push({
+                name: name,
+                price: price
+            })
+        }
 
-const JumiaScrapper = ()=>{
-    const url = 'https://www.jumia.co.ke/groceries';
+        return products
+    }
 
-    
-    return {}
+    async function products(){
+        let products = []
+        const categories = await productCategories()
+
+        for (const category of categories) {
+            const product = await scrapData(category, getProducts)
+            products.push(product)
+        }
+
+        return products
+    }
+
+
+    return {
+            products,
+            
+    }
 }
 
 
-
 module.exports = {
-    JumiaScrapper
+    jumiaScrapper
+
 }
