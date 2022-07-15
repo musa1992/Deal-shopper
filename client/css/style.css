@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+p
+{
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+.row {
+    display: flex;
+}
+
+.container {
+    width: 90%;
+    margin-inline: auto;
+}
+
+/* header section */
+
+.header {
+    width: 100%;
+    padding-block: 1em;
+}
+
+.nav {
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1em;
+}
+
+.cart-image {
+    width: 1.75em;
+}
+
+.cart-container{
+    align-items: center;
+}
+
+.cart {
+    padding-right: 1em;
+    position: relative;
+}
+
+.items-counter {
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.25em;
+    width: 1.25em;
+    border-radius: 50%;
+    font-size: .85em;
+    position: absolute;
+    top: -22%;
+    left: 40%;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
