@@ -111,6 +111,8 @@ main {
     padding-inline-start: .55em;
     align-items: center;
     border-left: transparent solid 4px;
+    transition: color 250ms;
+    transition: border-left 250ms;
 }
 
 .category-item > p {
@@ -165,6 +167,14 @@ main {
     padding-inline: .25em;
     padding-block: .5em;
     position: relative;
+    transition: box-shadow 200ms ease;
+    
+    
+}
+.item:hover {
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2),
+    -1px -1px 1px 1px rgba(0,0,0,0.2);
+    
 }
 
 .item-info {
@@ -185,6 +195,7 @@ main {
     left: 10;
     bottom: 0;
     margin-bottom: 8px;
+    transition: background-color 500ms;
 }
 
 .btn-add-cart:hover {
