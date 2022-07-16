@@ -175,11 +175,6 @@ main {
     
     
 }
-.item:hover {
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2),
-    -1px -1px 1px 1px rgba(0,0,0,0.2);
-  
-}
 
 .item-info {
     margin-top: 1em;
@@ -200,12 +195,24 @@ main {
     bottom: 0;
     margin-bottom: 8px;
     transition: background-color 500ms;
+    visibility: hidden;
 }
 
 .btn-add-cart:hover {
     cursor: pointer;
     background-color: #d6512c;
 }
+
+.item:hover{
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2),
+    -1px -1px 1px 1px rgba(0,0,0,0.2);
+  
+}
+.item:hover > button {
+    visibility: visible;  
+}
+
+
 
 .pagination {
     justify-content: center;
@@ -224,5 +231,29 @@ main {
     background-color: #EF5F37;
     color: white;
     cursor: pointer;
+    border: .1em solid transparent;
+}
+.page:hover{
+    border: .1em solid lightgrey;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: white;
+    padding-block: 3em;
+    justify-content: center;
+}
+
+.footer > p {
+    margin-bottom: 1em;
+}
+
+.underline {
+    border-bottom: 4px solid orangered;
+    padding-bottom: .1em;
 }
 
