@@ -190,8 +190,8 @@ main {
     border: none;
     border-radius: .3em;
     position: absolute;
-    right: 0;
-    left: 10;
+    right: 10px;
+    left: 10px;
     bottom: 0;
     margin-bottom: 8px;
     transition: background-color 500ms;
