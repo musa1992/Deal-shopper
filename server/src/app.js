@@ -5,14 +5,18 @@ const cors = require('cors')
 
 const productsRouter = require('./routes/products/products.router')
 
+
 const app = express()
  
-// app.use('/', express.static(path.join(__dirname,'../../client')))
+//app.use('/', express.static(path.join(__dirname,'../../client')))
 app.use(cors({
-    origin: 'http://localhost:5500',
+    origin: '*'
 }))
+
+
 app.use(express.json())
 app.use(productsRouter)
+
 
 
 module.exports = app
