@@ -257,3 +257,78 @@ main {
     padding-bottom: .1em;
 }
 
+/* shopping-list html */
+
+.vendors {
+    grid-template-columns: repeat(2,1fr);
+}
+
+.cart-image {
+    margin-inline-end: 1em;
+}
+.icon {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 1em;
+}
+
+.remove-item {
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.items-input {
+    width: 4em;
+    padding-block: .5em;
+    border: none;
+    caret-color: transparent;
+    padding-inline-start: 1.5em;
+    background-color: transparent;
+}
+
+.btn-change-item-count {
+    padding: .5em;
+    color: white;
+    font-weight: 600;
+    background-color: #EF5F37;
+    border: none;
+    border-radius: .3em;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.upper-row {
+    margin-bottom: 2em;
+}
+
+.cart-row {
+    margin-bottom: 1.8em;
+    /* padding: 1em; */
+}
+
+.vendor {
+    padding: 1em;
+    position: relative;
+}
+
+.vendor-1 {
+    background-color: wheat;
+}
+
+.vendor-2 {
+    background-color: antiquewhite;
+}
+
+.cart-total {
+    
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+

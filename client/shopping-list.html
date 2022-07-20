@@ -22,13 +22,13 @@
         </nav>
     </header>
     <main>
-        <div class="vendors">
-            <div class="vendor">
+        <div class="vendors container grid">
+            <div class="vendor vendor-1">
                 <div class="cart-row">
-                    <div class="row">
-                        <div>
+                    <div class="row space-between upper-row">
+                        <div class="row">
                             <div class="cart-image">
-                                <img src="" alt="">
+                                <img src="./images/icons/flour.png" alt="">
                             </div>
                             <p class="name">Product product</p>
                         </div>
@@ -36,26 +36,53 @@
                             ksh.250
                         </p>
                     </div>
-                    <div class="row">
-                        <div class="remove-item"></div>
+                    <div class="row space-between">
+                        <div class="remove-item row">
+                            <img class= "icon" src="./images/icons/trash.png" alt="trash bin" srcset="">
+                            <p>REMOVE</p>
+                        </div>
                         <div class="change-item-amount">
-                            <button >&plus;</button>
-                            <input type="text" name="items" id="item">
-                            <button>&minus;</button>
+                            <button class="btn-change-item-count" >&plus;</button>
+                            <input class="items-input" type="text" name="items" id="item">
+                            <button class="btn-change-item-count">&minus;</button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="cart-total">
-                <p>Total</p>
-                <p>Kshs.2400</p>
-            </div>
-            <div class="vendor">
                 <div class="cart-row">
-                    <div class="row">
-                        <div>
+                    <div class="row space-between upper-row">
+                        <div class="row">
                             <div class="cart-image">
-                                <img src="" alt="">
+                                <img src="./images/icons/flour.png" alt="">
+                            </div>
+                            <p class="name">Another product</p>
+                        </div>
+                        <p class="cart-price">
+                            ksh 3000
+                        </p>
+                    </div>
+                    <div class="row space-between">
+                        <div class="remove-item row">
+                            <img class= "icon" src="./images/icons/trash.png" alt="trash bin" srcset="">
+                            <p>REMOVE</p>
+                        </div>
+                        <div class="change-item-amount">
+                            <button class="btn-change-item-count" >&plus;</button>
+                            <input class="items-input" type="text" name="items" id="item">
+                            <button class="btn-change-item-count">&minus;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-total row space-between">
+                    <p>Total</p>
+                    <p>Kshs.2400</p>
+                </div>
+            </div>
+            <div class="vendor vendor-2">
+                <div class="cart-row">
+                    <div class="row space-between upper-row">
+                        <div class="row">
+                            <div class="cart-image">
+                                <img src="./images/icons/flour.png" alt="">
                             </div>
                             <p class="name">Product product</p>
                         </div>
@@ -63,22 +90,24 @@
                             ksh.250
                         </p>
                     </div>
-                    <div class="row">
-                        <div class="remove-item"></div>
+                    <div class="row space-between">
+                        <div class="remove-item row">
+                            <img class= "icon" src="./images/icons/trash.png" alt="trash bin" srcset="">
+                            <p>REMOVE</p>
+                        </div>
                         <div class="change-item-amount">
-                            <button >+</button>
-                            <input type="text" name="items" id="item">
-                            <button>-</button>
+                            <button class="btn-change-item-count" >&plus;</button>
+                            <input class="items-input" type="text" name="items" id="item">
+                            <button class="btn-change-item-count">&minus;</button>
                         </div>
                     </div>
                 </div>
+                <div class="cart-total row space-between">
+                    <p>Total</p>
+                    <p>Kshs.2400</p>
+                </div>
             </div>
-            <div class="cart-total">
-                <p>Total</p>
-                <p>Kshs.2400</p>
-            </div>
-        </div>
-        
+            
     </main>
     <footer class="footer">
         <p>Created by <span class="underline">M</span>oses Bwire</p>
