@@ -7,9 +7,7 @@ function getAllProducts(req, res){
 
 function getProduct(req,res){
     const category = req.params.category
-
     const categorizedProducts = getCategoryProducts(category)
-
     return res.status(200).json(categorizedProducts)
     
 }
