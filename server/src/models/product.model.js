@@ -29,6 +29,16 @@ const products = [
 
 ]
 
+function getCategoryProducts(category){
+  
+    const categorizedProducts = products.filter(product => product.category === category)
+
+    return categorizedProducts
+}
 
 
-module.exports = products
+
+module.exports = {
+    products,
+    getCategoryProducts
+}

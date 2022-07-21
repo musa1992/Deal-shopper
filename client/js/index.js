@@ -3,6 +3,7 @@
 // add to cart item toast indicates how many items are in the cart
 
 let addBtns = document.querySelectorAll('.btn-add-cart')
+let productCategoryLinks = document.querySelectorAll('.category-item')
 const API_URL = 'http://localhost:8000'
 
 const categories = ['flour','sugar','cooking oil', 'milk', 'cooking ingredients', 
@@ -39,6 +40,9 @@ const cart = (()=>{
     }
 
 })()
+
+
+
 
 
 function countCartItems(items){
@@ -135,6 +139,25 @@ addBtns.forEach((btn)=>{
         countCartItems(cart.itemsCount())
     })
 })
+
+
+async function getCategory(category){
+    const response = await fetch(`${API_URL}/products/${category}`)
+    return await response.json()
+
+}
+productCategoryLinks.forEach((link)=>{
+    link.addEventListener('click', (e)=>{
+        let clickedLink = e.target
+        let category = clickedLink.dataset.name
+        getCategory(category).then((res)=>{
+            console.log(res)
+        })
+        
+    })
+})
+
+
 
 
 
